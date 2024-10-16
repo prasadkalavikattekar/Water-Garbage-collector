@@ -1,0 +1,36 @@
+//HTML
+HTML 
+html = f""" <!DOCTYPE html> 
+<html> 
+<head>
+ <title>Water garbage collector</title> 
+</head> <center><b>
+ <form action="./left">
+ <input type="submit" value="left" style="height:120px; width:120px" />
+ </form> 
+<table><tr> 
+<td><form action="./back"> 
+<input type="submit" value="back" style="height:120px; width:120px" />
+ </form></td> 
+<td><form action="./stop"> <input type="submit" value="Stop" style="height:120px; width:120px" /> 
+</form></td> <td><form action="./forward"> 
+<input type="submit" value="forward" style="height:120px; width:120px" /> 
+</form></td> </tr></table> <form action="./right">
+ <input type="submit" value="right" style="height:120px; width:120px" />
+ </form> </body>
+  < / h t m l > "
+
+return str(html)
+ def serve(connection):
+ #Start web server while True:
+ client = connection.accept()[ 0] request = client.recv(1024) request = str(request)
+ try: request = request.split()[1] except IndexError: pass if request == '/forward?':
+ move_forward() elif request =='/left?' :
+ move_left() elif request =='/stop ?':
+ move_st op() elif request =='/right
+
+?': 
+move_right() elif request =='/back ?':
+ move_b ackward () html = webpage() client.send( html) client.close () try:
+ ip = connect() connection = open_socket(ip) serve(connection) except Keyboar dInterrup t:
+ machine. reset()
